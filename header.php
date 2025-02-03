@@ -16,7 +16,7 @@
                 <a class="nav-link" href="#">Учет расходов</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Выход</a> <!-- Добавьте логику выхода из системы -->
+                <a class="nav-link" href="logout.php">Выход</a>
             </li>
         </ul>
     </div>
