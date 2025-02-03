@@ -1,6 +1,6 @@
 <?php
 $host = 'MySQL-8.2';
-$db = 'FinanceTracker';
+$db = 'finance_db';
 $user = 'root';
 $pass = '';
 
