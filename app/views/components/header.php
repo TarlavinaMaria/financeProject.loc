@@ -30,7 +30,7 @@
                                 <a class="nav-link" href="#">Мои заметки</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Кошелек</a>
+                                <a class="nav-link" href="wallet">Кошелек</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="logout">Выход</a>

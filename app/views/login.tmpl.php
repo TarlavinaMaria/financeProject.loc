@@ -1,7 +1,4 @@
-<?php
-session_start(); // Начинаем сессию
-
-?>
+<?php session_start(); // Начинаем сессию ?>
 
 <!-- Форма входа -->
 <!DOCTYPE html>
