@@ -1,38 +1,3 @@
-<?php
-// Подключение к базе данных
-$servername = "MySQL-8.2"; // Замените на ваши данные
-$username = "root"; // Замените на ваши данные
-$password = ""; // Замените на ваши данные
-$dbname = "finance_db"; // Название вашей базы данных
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Проверка соединения
-if ($conn->connect_error) {
-    die("Ошибка подключения: " . $conn->connect_error);
-}
-
-// Обработка формы регистрации
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Хеширование пароля
-
-    // SQL запрос для вставки нового пользователя
-    $sql = "INSERT INTO Users (Name, Email, Password) VALUES ('$name', '$email', '$password')";
-
-    if ($conn->query($sql) === TRUE) {
-        // Перенаправление на страницу входа после успешной регистрации
-        header("Location: login.php");
-        exit();
-    } else {
-        echo "Ошибка: " . $sql . "<br>" . $conn->error;
-    }
-}
-
-$conn->close();
-?>
-
 <!-- Форма регистрации -->
 <!DOCTYPE html>
 <html lang="ru">
@@ -61,7 +26,7 @@ $conn->close();
                 <input type="password" class="form-control" id="password" name="password" required>
             </div>
             <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
-            <a href="index.php" class="btn btn-secondary">Назад</a>
+            <a href="index" class="btn btn-secondary">Назад</a>
         </form>
     </div>
 

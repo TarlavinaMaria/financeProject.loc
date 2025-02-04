@@ -1,12 +1,4 @@
-<?php
-session_start(); // Начинаем сессию
-
-// Проверка, авторизован ли пользователь
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit();
-}
-?>
+<?php require(COMPONENTS . "/header.php"); ?>
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -20,7 +12,6 @@ if (!isset($_SESSION['user_id'])) {
 
 <body>
     <!-- Включение оглавления -->
-    <?php include 'header.php'; ?>
 
     <div class="container mt-5">
         <h1>Мой дневник</h1>
@@ -28,11 +19,9 @@ if (!isset($_SESSION['user_id'])) {
         <p>Здесь вы можете отслеживать свои финансы и записывать свои мысли.</p>
         <h2>Учет настроения</h2>
         <p>Записывайте свое настроение каждый день.</p>
-        <!-- Здесь можно добавить форму или функциональность для учета настроения -->
     </div>
 
     <!-- Включение подвала -->
-    <?php include 'footer.php'; ?>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -40,3 +29,5 @@ if (!isset($_SESSION['user_id'])) {
 </body>
 
 </html>
+
+<?php require(COMPONENTS . "/footer.php"); ?>

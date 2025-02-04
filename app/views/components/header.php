@@ -6,7 +6,7 @@
     <div class=" collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="Diary.php">Мой дневник</a>
+                <a class="nav-link" href="diary">Мой дневник</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Учет доходов</a>
@@ -15,7 +15,7 @@
                 <a class="nav-link" href="#">Учет расходов</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="logout.php">Выход</a>
+                <a class="nav-link" href="logout">Выход</a>
             </li>
         </ul>
     </div>
