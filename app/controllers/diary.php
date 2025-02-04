@@ -3,7 +3,7 @@ session_start(); // Начинаем сессию
 
 // Проверка, авторизован ли пользователь
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: login");
     exit();
 }
 require_once(VIEWS . "/diary.tmpl.php");
