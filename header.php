@@ -1,10 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Финансовый дневник</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+    <a class="navbar-brand" href="#">
+        <?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'Неизвестно'; ?></a>
+    <!-- Добавить ссылку на профиль в href="profile.php"-->
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class=" collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">
                 <a class="nav-link" href="Diary.php">Мой дневник</a>

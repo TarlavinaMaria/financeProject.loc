@@ -29,7 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Проверка пароля
         if (password_verify($password, $user['Password'])) {
             $_SESSION['user_id'] = $user['User_id']; // Сохраняем ID пользователя в сессии
-            echo "Вход выполнен успешно!";
+            $_SESSION['username'] = $user['Name']; // Сохраняем имя пользователя
+            // echo "Вход выполнен успешно!";
             header("Location: diary.php");
         } else {
             echo "Неверный пароль.";
@@ -66,6 +67,7 @@ $conn->close();
                 <input type="password" class="form-control" id="password" name="password" required>
             </div>
             <button type="submit" class="btn btn-primary">Войти</button>
+            <a href="index.php" class="btn btn-secondary">Назад</a>
         </form>
     </div>
 

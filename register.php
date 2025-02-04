@@ -61,6 +61,7 @@ $conn->close();
                 <input type="password" class="form-control" id="password" name="password" required>
             </div>
             <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+            <a href="index.php" class="btn btn-secondary">Назад</a>
         </form>
     </div>
 
