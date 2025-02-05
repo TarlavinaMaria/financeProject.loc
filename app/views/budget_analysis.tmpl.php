@@ -26,9 +26,9 @@
                             <td><?php echo htmlspecialchars($action['Date']); ?></td>
                             <td><?php echo htmlspecialchars($action['Comment']); ?></td>
                             <td>
-                                <a href="edit_action.php?id=<?php echo $action['Action_id']; ?>"
+                                <a href="/edit_action?id=<?php echo $action['Action_id']; ?>"
                                     class="btn btn-warning btn-sm">Изменить</a>
-                                <a href="delete_action.php?id=<?php echo $action['Action_id']; ?>"
+                                <a href="/delete_action?id=<?php echo $action['Action_id']; ?>"
                                     class="btn btn-danger btn-sm">Удалить</a>
                             </td>
                         </tr>

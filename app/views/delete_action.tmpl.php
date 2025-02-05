@@ -6,7 +6,7 @@
     <div class="container mt-4">
         <h1>Подтверждение удаления записи</h1>
         <p>Вы уверены, что хотите удалить следующую запись?</p>
-        <table>
+        <table class="table table-bordered mt-3">
             <tr>
                 <th>Категория</th>
                 <td><?php echo htmlspecialchars($action['CategoryName']); ?></td>
@@ -24,10 +24,10 @@
                 <td><?php echo htmlspecialchars($action['Comment']); ?></td>
             </tr>
         </table>
-        <form method="POST">
+        <form method="POST" class="mt-4">
             <input type="hidden" name="id" value="<?php echo $action['Action_id']; ?>">
             <button type="submit" class="btn btn-danger">Удалить</button>
-            <a href="budget_analysis" class="btn btn-secondary">Назад</a>
+            <a href="/budget_analysis" class="btn btn-secondary">Назад</a>
         </form>
     </div>
 </main>
