@@ -4,7 +4,7 @@
     <div class="container mt-4">
         <h1>Мой Кошелек</h1>
         <div class="budget-info">
-            <h2>Текущий бюджет: 10000 ₽</h2>
+            <h2>Текущий бюджет: <?php echo $balance; ?> ₽</h2>
         </div>
 
         <h3 class="mt-4">Действия с бюджетом:</h3>
