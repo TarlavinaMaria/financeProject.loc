@@ -1,3 +1,5 @@
+<!-- Конфигурация для подключения -->
+
 <?php
 define("PATH", 'https://financeproject.loc'); //domain url
 define("ROOT", dirname(__DIR__)); // root directory

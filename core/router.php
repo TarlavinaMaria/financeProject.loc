@@ -1,3 +1,5 @@
+<!-- Обработка маршрутов -->
+
 <?php
 require_once(CONFIG . "/routes.php");
 // router

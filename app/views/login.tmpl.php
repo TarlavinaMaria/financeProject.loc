@@ -1,6 +1,7 @@
-<?php session_start(); // Начинаем сессию ?>
-
 <!-- Форма входа -->
+
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="ru">
 

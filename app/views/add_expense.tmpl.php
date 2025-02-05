@@ -1,3 +1,5 @@
+<!-- Форма расхода -->
+ 
 <?php require(COMPONENTS . "/header.php"); ?>
 <main class="main py-3">
     <div class="container">

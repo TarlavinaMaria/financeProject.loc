@@ -1,3 +1,5 @@
+<!-- Форма кошелька -->
+
 <?php require(COMPONENTS . "/header.php"); ?>
 
 <main class="main py-3">

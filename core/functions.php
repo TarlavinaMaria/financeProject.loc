@@ -1,3 +1,5 @@
+<!-- Функции -->
+
 <?php
 function dump($data)
 {

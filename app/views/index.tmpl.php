@@ -13,11 +13,9 @@
     <div class="container mt-5">
         <div class="text-center">
             <h1 class="display-4">Добро пожаловать!</h1>
-            <!-- <p class="lead">Это учебный проект.</p> -->
             <hr class="my-4">
             <p>Здесь вы можете отслеживать свои финансовые операции, добавлять категории и управлять своими финансами.
             </p>
-            <!-- Ссылки на страницы входа и регистрации -->
             <a href="login" class="btn btn-primary btn-lg">Войти</a>
             <a href="register" class="btn btn-secondary btn-lg">Зарегистрироваться</a>
         </div>
