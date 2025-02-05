@@ -2,10 +2,10 @@
 <main class="main py-3">
     <div class="container">
         <h1>Добавить Доход</h1>
-        <form action="process_income" method="post">
+        <form action="" method="post">
             <div class="form-group">
-                <label for="amount">Сумма (₽):</label>
-                <input type="number" id="amount" name="amount" required class="form-control" step="0.01" min="0">
+                <label for="sum">Сумма (₽):</label>
+                <input type="number" id="sum" name="sum" required class="form-control" step="1" min="0">
             </div>
 
             <div class="form-group">
@@ -22,7 +22,7 @@
 
             <div class="form-group">
                 <label for="date">Дата:</label>
-                <input type="date" id="date" name="date" required class="form-control">
+                <input type="date" id="date" name="date" class="form-control">
             </div>
 
             <div class="form-group">
