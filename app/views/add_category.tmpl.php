@@ -16,10 +16,21 @@
                 </select>
             </div>
             <button type="submit" class="btn btn-primary mt-3">Добавить категорию</button>
+            <a href="wallet" class="btn btn-secondary mt-3">Назад</a>
         </form>
 
-        <h3 class="mt-4">Список категорий:</h3>
+        <!-- Отображение ошибок -->
+        <?php if (!empty($errors)): ?>
+            <div class="alert text-danger mt-3">
+                <ul class="list-unstyled">
+                    <?php foreach ($errors as $error): ?>
+                        <li><?php echo htmlspecialchars($error); ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
 
+        <h3 class="mt-4">Список категорий:</h3>
         <div class="d-flex justify-content-between">
             <!-- Таблица для доходов -->
             <div class="me-3" style="flex: 1;">

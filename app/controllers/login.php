@@ -1,6 +1,8 @@
 <!-- Обработка действий страницы входа -->
-
 <?php
+
+$errors = []; // Массив для хранения ошибок
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $email = htmlspecialchars(trim($_POST['email']));
@@ -21,22 +23,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = $result->find();
 
     if (!$user) {
-        echo ("Пользователь не найден.");
-        header("Location: register");
+        $errors[] = "Пользователь не найден.";
+        
+        // header("Location: register");
     }
+    if (!$errors) {
+        // Проверка пароля
+        if (password_verify($password, $user['Password'])) {
+            // Успешный вход
+            session_start();
+            $_SESSION['user_id'] = $user['User_id']; // Сохраняем ID пользователя в сессии
+            $_SESSION['username'] = $user['Name']; // Сохраняем имя пользователя
+            // echo "Вы успешно вошли!";
 
-    // Проверка пароля
-    if (password_verify($password, $user['Password'])) {
-        // Успешный вход
-        session_start();
-        $_SESSION['user_id'] = $user['User_id']; // Сохраняем ID пользователя в сессии
-        $_SESSION['username'] = $user['Name']; // Сохраняем имя пользователя
-        // echo "Вы успешно вошли!";
-
-        // Перенаправление на главную страницу
-        header("Location: diary");
-    } else {
-        die("Неверный пароль.");
+            // Перенаправление на главную страницу дневника
+            header("Location: diary");
+        } else {
+            $errors[] = "Неверный пароль.";
+        }
     }
 
 }

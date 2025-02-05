@@ -3,12 +3,11 @@
 <?php
 session_start();
 
+$errors = []; // Массив для хранения ошибок
 
 // Загрузка категорий доходов из базы данных
 $income_categories = $db->query("SELECT * FROM Category WHERE TypeCategory = 1")->findAll();
 $expense_categories = $db->query("SELECT * FROM Category WHERE TypeCategory = 0")->findAll();
-
-
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $category_name = htmlspecialchars(trim($_POST['category_name']));
@@ -17,16 +16,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Проверка на существование категории
     $existing_category = $db->query("SELECT * FROM Category WHERE CategoryName = ? AND TypeCategory = ?", [$category_name, $type_category])->find();
     if ($existing_category) {
-        echo "Категория с таким названием уже существует.";
+        $errors[] = "Категория с таким названием уже существует.";
     } else {
         // Сохранение новой категории в базу данных
         $stmt = $db->query("INSERT INTO Category (CategoryName, TypeCategory) VALUES (?, ?)", [$category_name, $type_category]);
 
         if ($stmt) {
-            header('Location: add_category'); // Перенаправление на страницу кошелька
+            header('Location: add_category');
             exit;
         } else {
-            echo "Ошибка при добавлении категории.";
+            $errors[] = "Ошибка при добавлении категории.";
         }
     }
 }

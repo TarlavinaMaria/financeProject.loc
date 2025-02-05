@@ -5,6 +5,8 @@ session_start();
 
 $user_id = $_SESSION['user_id'];
 
+$errors = []; // Массив для хранения ошибок
+
 // Извлечение категорий из базы данных
 $result = $db->query("SELECT CategoryName FROM Category WHERE TypeCategory = 0");
 $categories = $result->findAll();
@@ -37,10 +39,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Location: wallet');
             exit;
         } else {
-            echo "Ошибка при добавлении дохода.";
+            $errors[] = "Ошибка при добавлении дохода.";
         }
     } else {
-        echo "Категория не найдена.";
+        $errors[] = "Категория не найдена.";
     }
 }
 

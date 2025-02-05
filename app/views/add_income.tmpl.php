@@ -35,6 +35,17 @@
             <button type="submit" class="btn btn-primary">Добавить доход</button>
             <a href="wallet" class="btn btn-secondary">Назад</a>
         </form>
+
+        <!-- Отображение ошибок -->
+        <?php if (!empty($errors)): ?>
+            <div class="alert text-danger mt-3">
+                <ul class="list-unstyled">
+                    <?php foreach ($errors as $error): ?>
+                        <li><?php echo htmlspecialchars($error); ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
     </div>
 </main>
 
