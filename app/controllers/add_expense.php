@@ -17,6 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $date = htmlspecialchars(trim($_POST['date']));
     $comment = htmlspecialchars(trim($_POST['comment']));
 
+    // Если дата не выбрана, устанавливаем её на текущую дату
+    if (empty($date)) {
+        $date = date('Y-m-d'); // Формат даты: ГГГГ-ММ-ДД
+    }
+
     // Получаем ID категории
     $category = $db->query("SELECT Category_id FROM Category WHERE CategoryName = ?", [$category_name])->find();
 

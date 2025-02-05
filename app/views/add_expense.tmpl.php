@@ -1,5 +1,5 @@
 <!-- Форма расхода -->
- 
+
 <?php require(COMPONENTS . "/header.php"); ?>
 <main class="main py-3">
     <div class="container">
@@ -33,6 +33,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Добавить расход</button>
+            <a href="wallet" class="btn btn-secondary">Назад</a>
         </form>
     </div>
 </main>
