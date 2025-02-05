@@ -14,4 +14,5 @@
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/TarlavinaMaria/financeProject.loc.git
+   git clone https://github.com/ваш_пользователь/ваш_репозиторий.git
+   ```
