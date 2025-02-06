@@ -1,4 +1,4 @@
-<!-- Форма  заголовка -->
+<!-- Форма заголовка -->
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -18,9 +18,11 @@
                 <div class="container-fluid container">
                     <a class="navbar-brand" href="#">
                         <?php echo isset($_SESSION['username']) ? $_SESSION['username'] : 'Неизвестно'; ?></a>
-                    <!-- Добавить ссылку на профиль в href="profile.php"-->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class=" collapse navbar-collapse" id="navbarNav">
+                    <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link" href="diary">Главная</a>
