@@ -46,5 +46,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-require_once(VIEWS . '/add_income.tmpl.php');
+require_once(VIEWS . '/add_expense.tmpl.php');
 ?>

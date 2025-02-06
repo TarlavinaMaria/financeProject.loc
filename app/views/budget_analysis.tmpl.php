@@ -1,5 +1,4 @@
 <!-- Форма анализа бюджета -->
-
 <?php require(COMPONENTS . "/header.php"); ?>
 
 <main class="main py-3">
@@ -7,6 +6,26 @@
         <h1>Анализ бюджета</h1>
 
         <a href="wallet" class="btn btn-secondary mb-3">Назад</a>
+
+        <!-- Форма для поиска по датам -->
+        <form method="POST" class="mb-3">
+            <div class="form-row align-items-end">
+                <div class="col-auto">
+                    <label for="start_date">Начальная дата:</label>
+                    <input type="date" name="start_date" id="start_date" class="form-control"
+                        value="<?php echo htmlspecialchars($start_date); ?>">
+                </div>
+                <div class="col-auto">
+                    <label for="end_date">Конечная дата:</label>
+                    <input type="date" name="end_date" id="end_date" class="form-control"
+                        value="<?php echo htmlspecialchars($end_date); ?>">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary">Найти</button>
+                    <a href="budget_analysis" class="btn btn-secondary">Отмена</a>
+                </div>
+            </div>
+        </form>
 
         <h3>Все действия</h3>
         <table class="table table-bordered mt-3">
