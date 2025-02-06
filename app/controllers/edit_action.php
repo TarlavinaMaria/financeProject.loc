@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
     $action = $db->query("SELECT * FROM Action WHERE Action_id = ?", [$action_id])->find();
 
     if (!$action) {
-        die("Запись не найдена.");
+        $errors[] = "Запись не найдена.";
     }
 
     // Получение всех категорий для выпадающего списка

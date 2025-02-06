@@ -39,6 +39,7 @@
                     <thead>
                         <tr>
                             <th>Название категории</th>
+                            <th>Действия</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,10 +48,16 @@
                             foreach ($income_categories as $category) {
                                 echo "<tr>
                                         <td>{$category['CategoryName']}</td>
+                                        <td>
+                                            <form action='delete_category' method='post' style='display:inline;'>
+                                                <input type='hidden' name='category_id' value='{$category['Category_id']}'>
+                                                <button type='submit' class='btn btn-danger btn-sm'>Удалить</button>
+                                            </form>
+                                        </td>
                                       </tr>";
                             }
                         } else {
-                            echo "<tr><td colspan='1'>Категорий доходов нет</td></tr>";
+                            echo "<tr><td colspan='2'>Категорий доходов нет</td></tr>";
                         }
                         ?>
                     </tbody>
@@ -64,6 +71,7 @@
                     <thead>
                         <tr>
                             <th>Название категории</th>
+                            <th>Действия</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -72,10 +80,16 @@
                             foreach ($expense_categories as $category) {
                                 echo "<tr>
                                         <td>{$category['CategoryName']}</td>
+                                        <td>
+                                            <form action='delete_category' method='post' style='display:inline;'>
+                                                <input type='hidden' name='category_id' value='{$category['Category_id']}'>
+                                                <button type='submit' class='btn btn-danger btn-sm'>Удалить</button>
+                                            </form>
+                                        </td>
                                       </tr>";
                             }
                         } else {
-                            echo "<tr><td colspan='1'>Категорий расходов нет</td></tr>";
+                            echo "<tr><td colspan='2'>Категорий расходов нет</td></tr>";
                         }
                         ?>
                     </tbody>

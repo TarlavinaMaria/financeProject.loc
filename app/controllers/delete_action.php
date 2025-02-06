@@ -3,6 +3,7 @@
 <?php
 session_start();
 
+$errors = []; // Массив для хранения ошибок
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
     $action_id = $_GET['id'];
@@ -12,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
                            WHERE a.Action_id = ?", [$action_id])->find();
 
     if (!$action) {
-        die("Запись не найдена.");
+        $errors[] = "Запись не найдена.";
     }
 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
     // Обработка удаления записи

@@ -30,6 +30,16 @@
             <a href="/budget_analysis" class="btn btn-secondary">Назад</a>
         </form>
     </div>
+    <!-- Отображение ошибок -->
+    <?php if (!empty($errors)): ?>
+        <div class="alert text-danger mt-3">
+            <ul class="list-unstyled">
+                <?php foreach ($errors as $error): ?>
+                    <li><?php echo htmlspecialchars($error); ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    <?php endif; ?>
 </main>
 
 <?php require(COMPONENTS . "/footer.php"); ?>

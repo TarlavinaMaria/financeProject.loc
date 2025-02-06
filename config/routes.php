@@ -12,6 +12,7 @@ $routes = [
     'budget_analysis' => "budget_analysis.php",
     'edit_action' => "edit_action.php",
     'delete_action' => "delete_action.php",
+    'delete_category' => "delete_category.php",
     'register' => "register.php",
     'login' => "login.php",
     'logout' => "logout.php"
