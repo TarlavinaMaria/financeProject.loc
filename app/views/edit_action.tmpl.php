@@ -1,18 +1,18 @@
 <!-- Форма редактирования действия -->
-
 <?php require(COMPONENTS . "/header.php"); ?>
 
 <main class="main py-3">
     <div class="container mt-4">
         <h1>Редактирование действия</h1>
-        <form method="POST" class="mt-4">
-            <input type="hidden" name="id" value="<?php echo $action['Action_id']; ?>">
+        <form method="POST" class="mt-4" >
+            <input type="hidden" name="id" value="<?php echo htmlspecialchars($action['Action_id']); ?>">
 
             <div class="mb-3">
                 <label for="category" class="form-label">Категория:</label>
                 <select id="category" name="category" class="form-select" required>
                     <?php foreach ($categories as $category): ?>
-                        <option value="<?php echo htmlspecialchars($category['CategoryName']); ?>">
+                        <option value="<?php echo htmlspecialchars($category['Category_id']); ?>" 
+                            <?php echo ($category['Category_id'] == $action['Category']) ? 'selected' : ''; ?>>
                             <?php echo htmlspecialchars($category['CategoryName']); ?>
                         </option>
                     <?php endforeach; ?>
@@ -28,7 +28,7 @@
             <div class="mb-3">
                 <label for="date" class="form-label">Дата:</label>
                 <input type="date" id="date" name="date" class="form-control"
-                    value="<?php echo htmlspecialchars($action['Date']); ?>" required>
+                    value="<?php echo htmlspecialchars(date('Y-m-d', strtotime($action['Date']))); ?>" required>
             </div>
 
             <div class="mb-3">

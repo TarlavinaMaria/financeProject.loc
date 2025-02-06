@@ -8,10 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
     $action_id = $_GET['id'];
 
     // Получение данных действия по ID
-    $action = $db->query("SELECT a.*, c.CategoryName 
-                           FROM Action a 
-                           JOIN Category c ON a.Category = c.Category_id 
-                           WHERE a.Action_id = ? AND a.User_id = ?", [$action_id, $user_id])->find();
+    $action = $db->query("SELECT * FROM Action WHERE Action_id = ?", [$action_id])->find();
 
     if (!$action) {
         die("Запись не найдена.");
