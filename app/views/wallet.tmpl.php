@@ -10,10 +10,10 @@
         </div>
 
         <h3 class="mt-4">Действия с бюджетом:</h3>
-        <div class="d-flex flex-column mt-3">
-            <a href="add_income" class="btn btn-success mb-2">Добавить доход</a>
-            <a href="add_expense" class="btn btn-danger mb-2">Добавить расход</a>
-            <a href="add_category" class="btn btn-primary mb-2">Добавить категорию</a>
+        <div class="d-flex flex-wrap mt-3">
+            <a href="add_income" class="btn btn-success me-2 mb-2">Добавить доход</a>
+            <a href="add_expense" class="btn btn-danger me-2 mb-2">Добавить расход</a>
+            <a href="add_category" class="btn btn-primary me-2 mb-2">Добавить категорию</a>
             <a href="budget_analysis" class="btn btn-info mb-2">Анализ бюджета</a>
         </div>
 
@@ -25,7 +25,6 @@
                     <th>Сумма</th>
                     <th>Дата</th>
                     <th>Комментарий</th>
-
                 </tr>
             </thead>
             <tbody>
@@ -38,7 +37,6 @@
                         <td>{$row['Sum']} ₽</td>
                         <td>{$formattedDate}</td>
                         <td>{$row['Comment']}</td>
-                        
                       </tr>";
                     }
                 } else {
