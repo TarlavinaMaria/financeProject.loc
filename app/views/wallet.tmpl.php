@@ -32,10 +32,11 @@
                 <?php
                 if (!empty($action)) {
                     foreach ($action as $row) {
+                        $formattedDate = date('d.m.Y', strtotime($row['Date']));
                         echo "<tr>
                         <td>{$row['CategoryName']}</td>
                         <td>{$row['Sum']} ₽</td>
-                        <td>{$row['Date']}</td>
+                        <td>{$formattedDate}</td>
                         <td>{$row['Comment']}</td>
                         
                       </tr>";

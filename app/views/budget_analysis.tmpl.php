@@ -6,6 +6,8 @@
     <div class="container mt-4">
         <h1>Анализ бюджета</h1>
 
+        <a href="wallet" class="btn btn-secondary mb-3">Назад</a>
+
         <h3>Все действия</h3>
         <table class="table table-bordered mt-3">
             <thead>
@@ -23,7 +25,7 @@
                         <tr>
                             <td><?php echo htmlspecialchars($action['CategoryName']); ?></td>
                             <td><?php echo htmlspecialchars($action['Sum']); ?> ₽</td>
-                            <td><?php echo htmlspecialchars($action['Date']); ?></td>
+                            <td><?php echo htmlspecialchars(date('d.m.Y', strtotime($action['Date']))); ?></td>
                             <td><?php echo htmlspecialchars($action['Comment']); ?></td>
                             <td>
                                 <a href="/edit_action?id=<?php echo $action['Action_id']; ?>"
