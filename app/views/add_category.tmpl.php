@@ -49,8 +49,8 @@
                                 echo "<tr>
                                         <td>{$category['CategoryName']}</td>
                                         <td>
-                                            <form action='delete_category' method='post' style='display:inline;'>
-                                                <input type='hidden' name='category_id' value='{$category['Category_id']}'>
+                                            <form action='delete_category' method='get' style='display:inline;'>
+                                                <input type='hidden' name='id' value='{$category['Category_id']}'>
                                                 <button type='submit' class='btn btn-danger btn-sm'>Удалить</button>
                                             </form>
                                         </td>
@@ -81,8 +81,8 @@
                                 echo "<tr>
                                         <td>{$category['CategoryName']}</td>
                                         <td>
-                                            <form action='delete_category' method='post' style='display:inline;'>
-                                                <input type='hidden' name='category_id' value='{$category['Category_id']}'>
+                                            <form action='delete_category' method='get' style='display:inline;'>
+                                                <input type='hidden' name='id' value='{$category['Category_id']}'>
                                                 <button type='submit' class='btn btn-danger btn-sm'>Удалить</button>
                                             </form>
                                         </td>
