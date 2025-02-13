@@ -1,4 +1,6 @@
 ```sql
+-- Создание таблиц для базы данных MySQL
+
 -- Создание таблицы `Users`
 CREATE TABLE `Users` (
   `User _id` int NOT NULL AUTO_INCREMENT,
@@ -34,7 +36,9 @@ CREATE TABLE `Action` (
 ```
 
 ```sql lite
--- Включение поддержки внешних ключей (если не включено)
+-- Создание таблиц для базы данных SQLite
+
+-- Включение поддержки внешних ключей
 PRAGMA foreign_keys = ON;
 
 -- Создание таблицы `Users`
