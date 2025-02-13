@@ -11,11 +11,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = htmlspecialchars(trim($_POST['password']));
 
     if (empty($name) || empty($email) || empty($password)) {
-        die("Пожалуйста, заполните все поля.");
+        $errors[] = "Пожалуйста, заполните все поля.";
     }
 
     // Проверка существования пользователя
     $result = $db->query("SELECT User_id FROM Users WHERE Email = ?", [$email]);
+    
     if ($result === false) {
         abort(500);
         exit();
