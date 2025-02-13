@@ -12,6 +12,7 @@
 //         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
 //     ]
 // ]
+
 // Для SQLite
 return [
     'path' => __DIR__ . '/../database.sqlite', // Путь к файлу базы данных SQLite
