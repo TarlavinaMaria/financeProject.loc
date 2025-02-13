@@ -7,7 +7,7 @@
 
         <a href="wallet" class="btn btn-secondary mb-3">Назад</a>
 
-        <!-- Форма для поиска по датам -->
+        <!-- Форма для поиска по датам и типу операции -->
         <form method="POST" class="mb-3">
             <div class="form-row align-items-end">
                 <div class="col-auto">
@@ -19,6 +19,14 @@
                     <label for="end_date">Конечная дата:</label>
                     <input type="date" name="end_date" id="end_date" class="form-control"
                         value="<?php echo htmlspecialchars($end_date); ?>">
+                </div>
+                <div class="col-auto">
+                    <label for="type">Тип операции:</label>
+                    <select name="type" id="type" class="form-control">
+                        <option value="">Все</option>
+                        <option value="1" <?php echo (isset($_POST['type']) && $_POST['type'] == '1') ? 'selected' : ''; ?>>Доход</option>
+                        <option value="0" <?php echo (isset($_POST['type']) && $_POST['type'] == '0') ? 'selected' : ''; ?>>Расход</option>
+                    </select>
                 </div>
                 <div class="col-auto">
                     <button type="submit" class="btn btn-primary">Найти</button>
