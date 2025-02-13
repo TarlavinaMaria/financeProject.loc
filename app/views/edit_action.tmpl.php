@@ -4,15 +4,14 @@
 <main class="main py-3">
     <div class="container mt-4">
         <h1>Редактирование действия</h1>
-        <form method="POST" class="mt-4" >
+        <form method="POST" class="mt-4">
             <input type="hidden" name="id" value="<?php echo htmlspecialchars($action['Action_id']); ?>">
 
             <div class="mb-3">
                 <label for="category" class="form-label">Категория:</label>
                 <select id="category" name="category" class="form-select" required>
                     <?php foreach ($categories as $category): ?>
-                        <option value="<?php echo htmlspecialchars($category['Category_id']); ?>" 
-                            <?php echo ($category['Category_id'] == $action['Category']) ? 'selected' : ''; ?>
+                        <option value="<?php echo htmlspecialchars($category['Category_id']); ?>" <?php echo ($category['Category_id'] == $action['Category']) ? 'selected' : ''; ?>>
                             <?php echo htmlspecialchars($category['CategoryName']); ?>
                         </option>
                     <?php endforeach; ?>
@@ -42,15 +41,15 @@
         </form>
     </div>
     <!-- Отображение ошибок -->
-        <?php if (!empty($errors)): ?>
-            <div class="alert text-danger mt-3">
-                <ul class="list-unstyled">
-                    <?php foreach ($errors as $error): ?>
-                        <li><?php echo htmlspecialchars($error); ?></li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
-        <?php endif; ?>
+    <?php if (!empty($errors)): ?>
+        <div class="alert text-danger mt-3">
+            <ul class="list-unstyled">
+                <?php foreach ($errors as $error): ?>
+                    <li><?php echo htmlspecialchars($error); ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    <?php endif; ?>
 </main>
 
 <?php require(COMPONENTS . "/footer.php"); ?>
