@@ -32,3 +32,36 @@ CREATE TABLE `Action` (
   CONSTRAINT `fk_user` FOREIGN KEY (`User _id`) REFERENCES `Users` (`User _id`) ON DELETE CASCADE
 );
 ```
+
+```sql lite
+-- Включение поддержки внешних ключей (если не включено)
+PRAGMA foreign_keys = ON;
+
+-- Создание таблицы `Users`
+CREATE TABLE `Users` (
+  `User_id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `Name` TEXT NOT NULL,
+  `Email` TEXT NOT NULL UNIQUE,
+  `Password` TEXT NOT NULL,
+  `Created_at` DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Создание таблицы `Category`
+CREATE TABLE `Category` (
+  `Category_id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `CategoryName` TEXT NOT NULL,
+  `TypeCategory` INTEGER NOT NULL -- 1 - доходы, 0 - расходы
+);
+
+-- Создание таблицы `Action`
+CREATE TABLE `Action` (
+  `Action_id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `Category` INTEGER NOT NULL,
+  `Sum` REAL NOT NULL, -- Используем REAL для поддержки дробных чисел
+  `Date` DATETIME DEFAULT NULL,
+  `Comment` TEXT,
+  `User_id` INTEGER NOT NULL,
+  FOREIGN KEY (`Category`) REFERENCES `Category` (`Category_id`),
+  FOREIGN KEY (`User_id`) REFERENCES `Users` (`User_id`) ON DELETE CASCADE
+);
+```

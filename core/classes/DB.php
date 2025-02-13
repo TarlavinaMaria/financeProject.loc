@@ -16,10 +16,13 @@ class DB
     }
     public function getConnection(array $db_config)
     {
-        $dsn = "mysql:host={$db_config['host']};dbname={$db_config['dbname']};charset={$db_config['charset']}"; // соединение с БД
+        // $dsn = "mysql:host={$db_config['host']};dbname={$db_config['dbname']};charset={$db_config['charset']}"; // соединение с БД
+        $dsn = "sqlite:{$db_config['path']}"; // соединение с БД SQLite
         // Подключение к БД
         try {
-            $this->conn = new PDO($dsn, $db_config['username'], $db_config['password'], $db_config['options']);
+            // $this->conn = new PDO($dsn, $db_config['username'], $db_config['password'], $db_config['options']);
+            $this->conn = new PDO($dsn);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // Установка режима ошибок
             return $this;
         } catch (PDOException $e) {
             abort(500);

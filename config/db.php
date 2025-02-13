@@ -1,14 +1,19 @@
 <!-- Конфигурация для подключения к БД -->
 
 <?php
+// Для MySQL
+// return [
+//     'host' => 'MySQL-8.2',
+//     'dbname' => 'finance_db',
+//     'username' => 'root',
+//     'password' => '',
+//     'charset' => 'utf8',
+//     'options' => [
+//         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+//     ]
+// ]
+// Для SQLite
 return [
-    'host' => 'MySQL-8.2',
-    'dbname' => 'finance_db',
-    'username' => 'root',
-    'password' => '',
-    'charset' => 'utf8',
-    'options' => [
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    ]
-]
-    ?>
+    'path' => __DIR__ . '/../database.sqlite', // Путь к файлу базы данных SQLite
+];
+?>
