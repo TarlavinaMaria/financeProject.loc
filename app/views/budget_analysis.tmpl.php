@@ -7,33 +7,45 @@
 
         <a href="wallet" class="btn btn-secondary mb-3">Назад</a>
 
-        <!-- Форма для поиска по датам и типу операции -->
-        <form method="POST" class="mb-3">
-            <div class="form-row align-items-end">
-                <div class="col-auto">
-                    <label for="start_date">Начальная дата:</label>
-                    <input type="date" name="start_date" id="start_date" class="form-control"
-                        value="<?php echo htmlspecialchars($start_date); ?>">
-                </div>
-                <div class="col-auto">
-                    <label for="end_date">Конечная дата:</label>
-                    <input type="date" name="end_date" id="end_date" class="form-control"
-                        value="<?php echo htmlspecialchars($end_date); ?>">
-                </div>
-                <div class="col-auto">
-                    <label for="type">Тип операции:</label>
-                    <select name="type" id="type" class="form-control">
-                        <option value="">Все</option>
-                        <option value="1" <?php echo (isset($_POST['type']) && $_POST['type'] == '1') ? 'selected' : ''; ?>>Доход</option>
-                        <option value="0" <?php echo (isset($_POST['type']) && $_POST['type'] == '0') ? 'selected' : ''; ?>>Расход</option>
-                    </select>
-                </div>
-                <div class="col-auto">
-                    <button type="submit" class="btn btn-primary">Найти</button>
-                    <a href="budget_analysis" class="btn btn-secondary">Отмена</a>
-                </div>
-            </div>
-        </form>
+        <!-- Форма для поиска по датам, типу операции и категории -->
+<form method="POST" class="mb-3">
+    <div class="form-row align-items-end">
+        <div class="col-auto">
+            <label for="start_date">Начальная дата:</label>
+            <input type="date" name="start_date" id="start_date" class="form-control"
+                value="<?php echo htmlspecialchars($start_date); ?>">
+        </div>
+        <div class="col-auto">
+            <label for="end_date">Конечная дата:</label>
+            <input type="date" name="end_date" id="end_date" class="form-control"
+                value="<?php echo htmlspecialchars($end_date); ?>">
+        </div>
+        <div class="col-auto">
+            <label for="type">Тип операции:</label>
+            <select name="type" id="type" class="form-control">
+                <option value="">Все</option>
+                <option value="1" <?php echo (isset($_POST['type']) && $_POST['type'] == '1') ? 'selected' : ''; ?>>Доход</option>
+                <option value="0" <?php echo (isset($_POST['type']) && $_POST['type'] == '0') ? 'selected' : ''; ?>>Расход</option>
+            </select>
+        </div>
+        <div class="col-auto">
+            <label for="category">Категория:</label>
+            <select name="category" id="category" class="form-control">
+                <option value="">Все категории</option>
+                <?php foreach ($categories as $category): ?>
+                    <option value="<?php echo htmlspecialchars($category['Category_id']); ?>"
+                        <?php echo (isset($_POST['category']) && $_POST['category'] == $category['Category_id']) ? 'selected' : ''; ?>>
+                        <?php echo htmlspecialchars($category['CategoryName']); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Найти</button>
+            <a href="budget_analysis" class="btn btn-secondary">Отмена</a>
+        </div>
+    </div>
+</form>
 
         <h3>Все действия</h3>
         <table class="table table-bordered mt-3">
