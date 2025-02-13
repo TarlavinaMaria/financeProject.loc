@@ -1,5 +1,5 @@
 ```sql
--- Создание таблиц для базы данных MySQL
+--- Создание таблиц для базы данных MySQL
 
 -- Создание таблицы `Users`
 CREATE TABLE `Users` (
@@ -16,7 +16,9 @@ CREATE TABLE `Category` (
   `Category_id` int NOT NULL AUTO_INCREMENT,
   `CategoryName` varchar(255) NOT NULL,
   `TypeCategory` tinyint(1) NOT NULL COMMENT '1 - доходы, 0 - расходы',
-  PRIMARY KEY (`Category_id`)
+  `User _id` int NOT NULL,
+  PRIMARY KEY (`Category_id`),
+  FOREIGN KEY (`User _id`) REFERENCES `Users` (`User _id`) ON DELETE CASCADE
 );
 
 -- Создание таблицы `Action`
@@ -29,7 +31,6 @@ CREATE TABLE `Action` (
   `User _id` int NOT NULL,
   PRIMARY KEY (`Action_id`),
   KEY `Category` (`Category`),
-  KEY `fk_user` (`User _id`),
   CONSTRAINT `action_ibfk_1` FOREIGN KEY (`Category`) REFERENCES `Category` (`Category_id`),
   CONSTRAINT `fk_user` FOREIGN KEY (`User _id`) REFERENCES `Users` (`User _id`) ON DELETE CASCADE
 );
@@ -43,7 +44,7 @@ PRAGMA foreign_keys = ON;
 
 -- Создание таблицы `Users`
 CREATE TABLE `Users` (
-  `User_id` INTEGER PRIMARY KEY AUTOINCREMENT,
+  `User _id` INTEGER PRIMARY KEY AUTOINCREMENT,
   `Name` TEXT NOT NULL,
   `Email` TEXT NOT NULL UNIQUE,
   `Password` TEXT NOT NULL,
@@ -54,7 +55,9 @@ CREATE TABLE `Users` (
 CREATE TABLE `Category` (
   `Category_id` INTEGER PRIMARY KEY AUTOINCREMENT,
   `CategoryName` TEXT NOT NULL,
-  `TypeCategory` INTEGER NOT NULL -- 1 - доходы, 0 - расходы
+  `TypeCategory` INTEGER NOT NULL, -- 1 - доходы, 0 - расходы
+  `User _id` INTEGER NOT NULL, -- Добавлено поле для связи с пользователем
+  FOREIGN KEY (`User _id`) REFERENCES `Users` (`User _id`) ON DELETE CASCADE
 );
 
 -- Создание таблицы `Action`
@@ -64,8 +67,10 @@ CREATE TABLE `Action` (
   `Sum` REAL NOT NULL, -- Используем REAL для поддержки дробных чисел
   `Date` DATETIME DEFAULT NULL,
   `Comment` TEXT,
-  `User_id` INTEGER NOT NULL,
+  `User _id` INTEGER NOT NULL,
   FOREIGN KEY (`Category`) REFERENCES `Category` (`Category_id`),
-  FOREIGN KEY (`User_id`) REFERENCES `Users` (`User_id`) ON DELETE CASCADE
+  FOREIGN KEY (`User _id`) REFERENCES `Users` (`User _id`) ON DELETE CASCADE
 );
 ```
+
+-- Примеры для
